@@ -1,0 +1,50 @@
+import json
+import random
+name=input("Enter your name")
+print(name,":)Welcome to OLA Cabs","\U0001F600")
+print("Your safety is our responsibility")
+print("Till your destination, we will make sure to be your best companion :)")
+def book_my_ride():
+    Destination=["Huskur","Axis bank road","sai hanuman","Halnayakahalli","SaI baba mandir"]
+    Drivers=[["nayak","sathish"],["vinod","mohan"],["ganni","akhila"],["Vinkya","sai kumar","srinu"],["umesh","Santhu"]]
+    print("These are the places you can make an easy ride")
+    for i in Destination:
+        print(i)
+    limit=int(input("How many rides you can choose"))
+    index=1
+    dic={}
+    # total=0
+    book=int(input(" For Booking Click option :1 and for Cancling option:2 "))
+    print("your currect location Halnayakahalli ")
+    while index<=limit:
+        select=input("enter your destination")
+        i=0
+        while i<len(Destination):
+            if select==Destination[i]:
+                j=0
+                total=0
+                while j<len(Drivers[i]):
+                    a=random.choice(Drivers[j])
+                    print("available drivers are:",a)
+                    j+=1
+                select=input("enter any one rider")
+                
+                if book==1:
+                    km=int(input("enter your kilometers"))
+                    OTP=int(input("enter  your OTP"))
+                    print(OTP,"\U0001F640")
+                    fare=km*5
+                    total+=fare
+                else:
+                    print("Canceling your ride")
+                b=total
+                dic[select]=b
+                print(dic)
+
+            i+=1
+        index+=1
+    with open("Rider_task.json","w+") as file:
+            json.dump(dic,file,indent=3)
+            M=json.dumps(dic)
+            return M
+book_my_ride()

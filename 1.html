@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rider App</title>
+</head>
+<body style="background-color: mediumvioletred;">
+    <h1><a href="My_Profile.html">My Profile</a></h1>
+    <h1><a href="python.html">Amount</a></h1>
+    <nav style="text-align: center;">
+        <h3 style="font-size: 20px;">
+            <h1><a href="Booking.html">Cab Booking App &#x1F60A</a></h1>
+            <h1><a href="cancel.html">cancel Booking &#128532</a></h1>
+        </h3>
+    </nav>
+    <h1><center><u style="background-color: tomato;""> Welcome to Pool Cabs</u></center></h1>
+    <center><img src="2.jpg" width="300" height="250" alt="Taxi"></center>
+    <h1>Find your Current location</h1>
+    <button onclick="getlocation()">Click me</button>
+    <div id="location"></div>
+    
+    <script>  
+        var x= document.getElementById("location");  
+        function getlocation() {  
+            if(navigator.geolocation){  
+                navigator.geolocation.getCurrentPosition(showPosition)  
+              }  
+            else  
+            {  
+                 alert("Sorry! your browser is not supporting")  
+             } }  
+           
+         function showPosition(position){  
+           var x = "Your current location is Halnayakahalli"
+                    document.getElementById("location").innerHTML = x;  
+         }  
+    </script>
+    <h1>Search Destination</h1>
+    
+<p><a href="https://www.magicbricks.com/Halanayakanahalli-in-Bangalore-Overview">Search Destination!</a></p>   
+</body>
+</html>
